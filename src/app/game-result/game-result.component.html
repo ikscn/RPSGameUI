@@ -1,0 +1,27 @@
+<div style="width: 600px;">
+
+  <mat-grid-list cols="3" rowHeight="200px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div style="text-align: center;" *ngIf="getPlayerWeapon()">
+        <img src="../../assets/{{getPlayerWeapon().imgSrc}}" class="selectedWeapon"/>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="vl"></div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div style="text-align: center;">
+        <div style="text-align: center;" *ngIf="getComputerWeapon()">
+          <img src="../../assets/{{getComputerWeapon().imgSrc}}" class="computerWeapon"/>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div class="resultDiv" *ngIf="getRoundResult()">
+    <h1 *ngIf="getRoundResult().result==0">It's a DRAW!</h1>
+    <h1 *ngIf="getRoundResult().result==1">YOU WON!!!</h1>
+    <h1 *ngIf="getRoundResult().result==2">YOU LOST!</h1>
+  </div>
+
+</div>

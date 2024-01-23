@@ -1,0 +1,26 @@
+<mat-grid-list cols="9" rowHeight="100px">
+  <mat-grid-tile [colspan]="2" [rowspan]="4" [style.background]="'#F7996E'">
+    <span style="text-align: center;">
+      <img src="../assets/rps_symbol.png" width="100px">
+      <h2>Rock, Paper, Scissors</h2>
+    </span>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="5" [rowspan]="4" [style.background]="'#D8D4F2'">
+    <app-game-board></app-game-board>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="4" [style.background]="'#F7996E'">
+    <app-settings></app-settings>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div class="title">
+  <h3>CURRENT GAME</h3>
+</div>
+
+<app-score-board></app-score-board>
+
+<div class="title">
+  <h3>GAME HISTORY</h3>
+</div>
+
+<app-game-history></app-game-history>

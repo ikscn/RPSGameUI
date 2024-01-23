@@ -1,0 +1,23 @@
+.vl {
+  border-left: 2px solid white;
+  height: 80px;
+}
+
+.selectedWeapon {
+  width: 60px;
+  background-color: #344966;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.computerWeapon {
+  width: 60px;
+  background-color: #7F6A93;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.resultDiv {
+  text-align: center;
+  color: #FFFFFF;
+}

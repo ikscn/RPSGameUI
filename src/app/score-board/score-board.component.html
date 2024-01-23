@@ -1,0 +1,37 @@
+<mat-grid-list cols="8" rowHeight="100px">
+  <!-- ROW 1 -->
+  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'#344966'">
+    YOU
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#F7996E'">
+    DRAW
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'#7F6A93'">
+    COMPUTER
+  </mat-grid-tile>
+  <!-- ROW 2 -->
+  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'#344966'">
+    <div *ngIf="lastGameResult() && isAuto()">
+      <h1>{{lastGameResult().playerWon}}</h1>
+    </div>
+    <div *ngIf="!isAuto()">
+      <h1>{{singlePlayerWon()}}</h1>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#F7996E'">
+    <div *ngIf="lastGameResult() && isAuto()">
+      <h1>{{lastGameResult().draw}}</h1>
+    </div>
+    <div *ngIf="!isAuto()">
+      <h1>{{singleDraw()}}</h1>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'#7F6A93'">
+    <div *ngIf="lastGameResult() && isAuto()">
+      <h1>{{lastGameResult().computerWon}}</h1>
+    </div>
+    <div *ngIf="!isAuto()">
+      <h1>{{singleComputerWon()}}</h1>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

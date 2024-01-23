@@ -1,0 +1,33 @@
+<div class="settingsDiv">
+  <div style="margin-top: 10px; height: 80px;">
+    <mat-form-field *ngIf="isAuto" class="input" id="gameLengthInput">
+      <mat-label>Game Length (Rounds)</mat-label>
+      <span>
+        <input matInput type="number" [(ngModel)]="gameLength" [disabled]="isPlaying()"
+            name="gameLengthInput" min="1" max="100" #glength="ngModel">
+      </span>
+    </mat-form-field>
+  </div>
+  <div style="text-align: center;">
+    <mat-slide-toggle [(ngModel)]="isAuto" [disabled]="isPlaying()" [color]="'accent'">AUTOPLAY</mat-slide-toggle>
+  </div>
+</div>
+
+<div>
+  <div *ngIf="!isPlaying()" class="gameButtonDiv">
+    <button mat-raised-button color="primary"
+        (click)="startGame()" style="font-size: x-large;">Start Game</button>
+  </div>
+  <div *ngIf="isPlaying()" class="gameButtonDiv">
+    <button mat-raised-button color="accent"
+        (click)="endGame()" style="font-size: larger;">End Game</button>
+  </div>
+</div>
+
+<!-- <div>
+  <div style="text-align: center; margin-top: 20px;">
+    <button mat-raised-button color="secondary" (click)="playAuto()" style="font-size: x-large;">Auto Play</button>
+  </div>
+</div> -->
+
+

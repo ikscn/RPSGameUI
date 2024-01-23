@@ -1,0 +1,28 @@
+<cdk-virtual-scroll-viewport itemSize="100" class="viewport">
+  <div>
+    <mat-table [dataSource]="getGameHistory()">
+      <ng-container matColumnDef="gameNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Game # </mat-header-cell>
+        <mat-cell *matCellDef="let game"> {{game.gameNumber}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="gameLength">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Rounds </mat-header-cell>
+        <mat-cell *matCellDef="let game"> {{game.gameLength}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="playerWon">
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: #344966;"> Player Won </mat-header-cell>
+        <mat-cell *matCellDef="let game" class="playerCol"> {{game.playerWon}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="draw">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Draw </mat-header-cell>
+        <mat-cell *matCellDef="let game"> {{game.draw}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="computerWon" class="computerCol">
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: #7F6A93;"> Computer Won </mat-header-cell>
+        <mat-cell *matCellDef="let game" class="computerCol"> {{game.computerWon}} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="histColumns" class="history-table"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: histColumns;" class="history-table"></mat-row>
+    </mat-table>
+  </div>
+</cdk-virtual-scroll-viewport>

@@ -1,0 +1,10 @@
+.title {
+  color: white;
+  background-color: #06AED5;
+  text-align: center;
+  padding-top: 10px;
+  height: 40px;
+  border: 4px;
+  border-style: solid;
+  border-radius: 10px;
+}

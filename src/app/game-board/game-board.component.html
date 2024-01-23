@@ -1,0 +1,58 @@
+<!-- <mat-dialog-content class="game-board"> -->
+  <div style="width: 520px;" *ngIf="isPlaying()">
+
+    <mat-grid-list cols="9" rowHeight="40px">
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <div style="text-align: center;">Choose your weapon!</div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div class="vl"></div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <div style="text-align: center;">
+          Computer is about to decide...
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="9" rowHeight="100px">
+
+      <!-- Selectable weapons -->
+      <mat-grid-tile *ngFor="let weapon of weapons" [colspan]="1" [rowspan]="1">
+          <div *ngIf="!(weapon.id == -1 && !isAuto())">
+            <img (click)="selectWeapon(weapon)" src="../../assets/{{weapon.imgSrc}}" class="weapon"/>
+          </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div class="vl"></div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <div *ngIf="!isComputerDecided()" [@appear]="isComputerDecided()?'hidden':'visible'">
+          <img src="../../assets/question.png" class="computerWeapon"/>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="9" rowHeight="100px">
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <!-- Selected weapon -->
+        <div *ngIf="isWeaponSelected()" style="text-align: center;">
+          <img src="../../assets/{{getPlayerWeapon().imgSrc}}" class="selectedWeapon"/>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div *ngIf="isWeaponSelected()" style="text-align: center;">
+          <button mat-raised-button color="primary" (click)="play()" style="font-size: x-large;">GO</button>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <div *ngIf="getComputerWeapon()" [@appear]="isComputerDecided()?'visible':'hidden'">
+          <img src="../../assets/{{getComputerWeapon().imgSrc}}" class="computerWeapon"/>
+        </div>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+  </div>
+<!-- </mat-dialog-content> -->

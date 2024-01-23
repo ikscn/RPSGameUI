@@ -1,0 +1,20 @@
+.input {
+  width: 180px;
+}
+
+.settingsDiv {
+  text-align: center;
+  width: 400px;
+}
+
+.warningDiv {
+  height: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: red;
+}
+
+.gameButtonDiv {
+  text-align: center;
+  margin-top: 20px;
+}

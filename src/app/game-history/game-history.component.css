@@ -1,0 +1,22 @@
+.history-table {
+  color: white;
+  background-color: #06AED5;
+  text-align: center;
+}
+
+.playerCol {
+  background-color: #344966;
+}
+
+.computerCol {
+  background-color: #7F6A93;
+}
+
+.drawCol {
+  background-color: #D8D4F2;
+}
+
+.viewport {
+  height: 200px;
+  border: 1px solid black;
+}
