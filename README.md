@@ -3,7 +3,7 @@
 This is the UI Implementation of the classical game "Rock, Paper, Scissors" to run on local devices.
 It needs a MySQL server to be set up to run properly.
 
-![Screenshot](/src/assets/paper.png)
+![Screenshot](/src/assets/screenshots/Screenshot-RPSGame.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
